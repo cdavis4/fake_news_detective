@@ -2,7 +2,7 @@
 ---
 #### _Fake News Detection Application_
 
-### Team Members ### _Carrie Davis, Joseph Goodwin, Nicholas Schaffner, Lachlan Sinclair_ 
+Team Members ### _Carrie Davis, Joseph Goodwin, Nicholas Schaffner, Lachlan Sinclair_ 
 
 Goal is to learn the Software Development Life Cycle process using Waterfall and then Agile Methods by practice implementation. Our group was assigned the task of creating a Fake News Detection Application to educate users on the legitimacy of online news. This Github site contains related code and data. Including links and information on our project plans.
 
