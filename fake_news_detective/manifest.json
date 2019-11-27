@@ -1,0 +1,27 @@
+{
+  "name": "Fake News Detective",
+  "version": "1.0",
+  "description": "Allows users to determine the validity of their news sources.",
+  "permissions": ["activeTab", "declarativeContent", "storage"],
+  "options_page": "options.html",
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "page_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/base16.png",
+      "32": "images/base32.png",
+      "48": "images/base48.png",
+      "128": "images/base128.png"
+    }
+  },
+  "icons": {
+    "16": "images/base16.png",
+    "32": "images/base32.png",
+    "48": "images/base48.png",
+    "128": "images/base128.png"
+  },
+  "manifest_version": 2
+}
