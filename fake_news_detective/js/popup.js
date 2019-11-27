@@ -6,7 +6,7 @@ chrome.storage.sync.get('color', function(data) {
   changeColor.style.backgroundColor = data.color;
   changeColor.setAttribute('value', data.color);
 });
-
+*/
 let button = document.getElementById('geturl');
 
 button.addEventListener ("click", function()
@@ -16,4 +16,3 @@ button.addEventListener ("click", function()
       textarea.value = window.location.href;
 });
 
-*/
