@@ -11,20 +11,11 @@ chrome.storage.sync.get('color', function(data) {
   changeColor.setAttribute('value', data.color);
 });
 */
-var regbutton = document.getElementById('regbutton');
+var button = document.getElementById('geturl');
 
-regbutton.onclick = function(element) {
+button.onclick = function(element) {
       var textarea = document.createElement('textarea');
       document.body.appendChild(textarea);
       textarea.value = window.location.href;
 };
 
-chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
-  if (changeInfo.url) {
-    var url_host = new URL(tabs[0].url)
-    if (url.hostname != 'google.com')
-      {
-        alert(window.location.href);
-      }
-  }
-});
