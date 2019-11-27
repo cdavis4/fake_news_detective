@@ -8,14 +8,20 @@
     "storage",
     "geolocation",
     "identity",
-    "webRequest",
-    "pageCapture"
+    "pageCapture",
+    "tabs"
   ],
   "options_page": "options.html",
   "background": {
     "scripts": ["background.js"],
     "persistent": false
   },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["contentscript.js"]
+    }
+  ],
   "page_action": {
     "default_popup": "popup.html",
     "default_icon": {
