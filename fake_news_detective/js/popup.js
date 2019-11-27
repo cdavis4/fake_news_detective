@@ -3,17 +3,18 @@
 // found in the LICENSE file.
 
 'use strict';
-
+/*
 let changeColor = document.getElementById('changeColor');
 
 chrome.storage.sync.get('color', function(data) {
   changeColor.style.backgroundColor = data.color;
   changeColor.setAttribute('value', data.color);
 });
-
-changeColor.onclick = function(element) {
+*/
+regbutton.onclick = function(element) {
   chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-    var url_host = new URL(tabs[0].url)
+    var tab = tabs[0];
+    var url = new URL(tab.url)
     var textarea = document.createElement('textarea');
     document.body.appendChild(textarea);
     textarea.value = url_host;
