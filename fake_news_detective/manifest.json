@@ -8,7 +8,8 @@
     "storage",
     "geolocation",
     "identity",
-    "webRequest"
+    "webRequest",
+    "pageCapture"
   ],
   "options_page": "options.html",
   "background": {
