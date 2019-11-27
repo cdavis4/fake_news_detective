@@ -1,10 +1,2 @@
 
-
-var getURL = function() {
-    var loc = window.location.href;
-    alert(loc)
-};
-
-chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
-    alert(window.location.href);
- })
+//empty coudl be used to use tab and email when extension is removed or submit is done
