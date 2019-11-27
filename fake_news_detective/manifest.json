@@ -2,7 +2,15 @@
   "name": "Fake News Detective",
   "version": "1.0",
   "description": "Allows users to determine the validity of their news sources.",
-  "permissions": ["activeTab", "declarativeContent", "storage"],
+  "permissions": [
+    "activeTab", 
+    "declarativeContent", 
+    "storage",
+    "geolocation",
+    "identity",
+    "webRequest",
+    "pageCapture"
+  ],
   "options_page": "options.html",
   "background": {
     "scripts": ["background.js"],
