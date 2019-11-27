@@ -22,7 +22,7 @@
       "js": ["contentscript.js"]
     }
   ],
-  "page_action": {
+  "browser_action": {
     "default_popup": "popup.html",
     "default_icon": {
       "16": "images/base16.png",

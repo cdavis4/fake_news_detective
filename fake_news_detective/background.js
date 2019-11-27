@@ -21,10 +21,10 @@ chrome.runtime.onInstalled.addListener(function() {
 ///https://stackoverflow.com/questions/34957319/how-to-listen-for-url-change-with-chrome-extension
 chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
   if (changeInfo.url) {
-    var url = new URL(changeInfo.url);
+    var url_host = new URL(tabs[0].url)
     if (url.hostname != 'google.com')
       {
-        alert(url);
+        alert(url_host);
       }
   }
 });

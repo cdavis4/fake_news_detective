@@ -12,10 +12,10 @@ chrome.storage.sync.get('color', function(data) {
 });
 
 changeColor.onclick = function(element) {
-  let color = element.target.value;
   chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-    chrome.tabs.executeScript(
-        tabs[0].id,
-        {code: 'document.body.style.backgroundColor = "' + color + '";'});
+    var url_host = new URL(tabs[0].url)
+    var textarea = document.createElement('textarea');
+    document.body.appendChild(textarea);
+    textarea.value = url_host;
   });
 };
