@@ -9,8 +9,7 @@ chrome.storage.sync.get('color', function(data) {
 */
 let button = document.getElementById('geturl');
 
-button.addEventListener ("click", function()
- {
+button.addEventListener ("click", function() {
       var textarea = document.createElement('textarea');
       document.body.appendChild(textarea);
       textarea.value = window.location.href;
