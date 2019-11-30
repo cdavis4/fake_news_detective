@@ -8,7 +8,21 @@ Goal is to learn the Software Development Life Cycle process using Waterfall and
 
 ## Getting Started ##
 ---
-These will contain instructions to get a copy of the project up and running on your local machine for development and testing purposes. 
+### Install and Authorize Chrome Extension
+
+Download the fake_news_detective repository by clicking on the "Clone or download" button and selecting "Download ZIP".
+
+Once the you have downloaded the zip file, open up the Chrome browser and type the command "chrome://extensions".
+
+Within the Extension window, toggle the "Developer mode" button at the upper right corner of the window to the "ON" position. Once you have toggled this button to the "ON" position, click on the "Load unpacked" button located on the upper left corner of the Extension window. Navigate to the directory in which you have downloaded the "fake_news_detective-master" file and then enter that directory. Select the "fake_news_detective" file and click on the "Select" button.
+
+Once you have clicked on the "Select" button, the fake_news_detective extension should appear in the upper left corner of the Chrome browser. You can right-click on the extension icon to display a pop-up window that contains information about the extension.
+
+### Uninstall Chrome Extension
+
+Open up the Chrome browser and type the command "chrome://extensions".
+
+Within the Extension window, locate the "Fake News Detective" extension and click on the "Remove" button. A pop-up will confirm whether you would like to uninstall the extension and once you click on the "Remove" button the Fake News Detective extension will be removed from your installed extensions.
 
 ## Built With
 ---
