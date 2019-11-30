@@ -11,11 +11,9 @@ chrome.storage.sync.get('color', function(data) {
   changeColor.setAttribute('value', data.color);
 });
 */
-var button = document.getElementById('geturl');
-
-button.onclick = function(element) {
+document.getElementById('geturl').addEventListener("click", function(){
       var textarea = document.createElement('textarea');
       document.body.appendChild(textarea);
       textarea.value = window.location.href;
-};
+});
 

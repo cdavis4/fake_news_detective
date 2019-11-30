@@ -7,11 +7,19 @@ chrome.storage.sync.get('color', function(data) {
   changeColor.setAttribute('value', data.color);
 });
 */
-let button = document.getElementById('geturl');
+window.onload=function(){
+  
+  
+  let button = document.getElementById('geturl');
 
-button.addEventListener ("click", function() {
+  button.addEventListener ("click", function() {
       var textarea = document.createElement('textarea');
       document.body.appendChild(textarea);
       textarea.value = window.location.href;
-});
 
+
+  });
+
+
+
+}
