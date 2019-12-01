@@ -53,6 +53,7 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
 
         console.log("in changed url");
         console.log(changeInfo.url);
+        localStorage.setItem(changeInfo.url,changeInfo.url);
         chrome.identity.getAuthToken({interactive: true}, function(token) {
           let init = {
             method: 'GET',
@@ -63,14 +64,19 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
             },
             'contentType': 'json'
           };
-          
           fetch(
             'https://people.googleapis.com/v1/people/me?personFields=names,emailAddresses&key=AIzaSyD5xMcNJynDl_3plmoELw4mDWFwFxInZ6k',
             init)
             .then((response) => response.json())
             .then(function(data) {
-              console.log(data)
-            });
+              let user_id = data['names'][0]['metadata']['source']['id'];
+              let email = data['emailAddresses'][0]['value'];
+              localStorage.setItem(user_id,email);
+              console.log(user_id);
+              console.log(email);
+  
+            })
+            .catch(error => { callback(error,null)});
       
         });
 
