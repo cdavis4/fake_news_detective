@@ -8,7 +8,45 @@ Goal is to learn the Software Development Life Cycle process using Waterfall and
 
 ## Getting Started ##
 ---
-These will contain instructions to get a copy of the project up and running on your local machine for development and testing purposes. 
+These instructions will get the extension running on your local browser for development and testing purposes. 
+
+### Prerequisites
+- Must have Chrome browser installed
+- Must be using laptop or desktop, extensions do not work in Chrome for mobile devices.
+- Must be signed out of Chrome browser
+- Must use an OSU email account to sign into Chrome when prompted
+
+### Deployment
+1) Clone repository locally to a known location you can browse to.
+	- Unzip folder and you will see a sub folder called `fake_news_detective`
+
+2) Open Chrome Browser to (chrome://Extensions)
+	- Click the Button `Load unpacked` and browse to the `fake_news_detective` folder.
+	- Click Select to select this extension directory.
+
+3) Sign in to Google Chrome then Authorize Extension
+	- After signing in using OSU account. You will be prompted to sign into Fake News 	Detective.
+	- Click on your OSU account in this window. Opening the Google Access page for 		Fake News Detective.
+	- Click Allow. This will close this window.
+
+4) Running App in Dev mode. 
+	- Note now you have Fake News Detective 1.0 installed as extension.
+	- In the Browser look for eye in magnifying glass next to address url box.
+	- Click on the icon to open pop up.
+
+5) Testing Permissions, On Change URL capture & local storage use
+	- With popup open you will see below Submit button instructions. Follow 		instructions.
+	- After clicking on 'Submit' you will see the following that was stored and 		pulled from chrome extension's version of local storage.
+		- user email
+		- user Google ID
+		- On Change latest URL navigated to
+	
+4) Viewing Command Line for Extensions.
+	- Open the Chrome Extensions Page (chrome://Extensions).
+	- In the just added Chrome Extensions page you will see and ID and an Inspect 		views ![#1589F0](background page)
+	- Click on ![#1589F0](background page) to open Extensions Console.
+	- This is were you can view errors and the console messages.
+
 
 ## Built With
 ---
