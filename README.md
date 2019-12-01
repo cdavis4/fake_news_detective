@@ -43,7 +43,7 @@ These instructions will get the extension running on your local browser for deve
 	
 6) Viewing Command Line for Extensions
 	- Open the Chrome Extensions page `(chrome://extensions)`
-	- In the Just Added Chrome Extensions page you will see an ID and an Inspect views `background page (Inactive)`
+	- In the Just Added Chrome Extensions page you will see an ID and an Inspect views `background page`
 	- Click on `background page` to open Extensions console
 	- You can use this console to view errors and the console messages
 
