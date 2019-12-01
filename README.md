@@ -12,41 +12,45 @@ These instructions will get the extension running on your local browser for deve
 
 ### Prerequisites
 - Must have Chrome browser installed
-- Must be using laptop or desktop, extensions do not work in Chrome for mobile devices.
-- Must be signed out of Chrome browser
+- Must be using laptop or desktop because extensions do not work in Chrome for mobile devices
+- Must be signed out of your Google account on the Chrome browser
 - Must use an OSU email account to sign into Chrome when prompted
 
 ### Deployment
-1) Clone repository locally to a known location you can browse to.
+1) Clone or download the repository locally to a known location you can browse to
 	- Unzip folder and you will see a sub folder called `fake_news_detective`
 
-2) Open Chrome Browser to (chrome://Extensions)
-	- Click the Button `Load unpacked` and browse to the `fake_news_detective` folder.
-	- Click Select to select this extension directory.
+2) Open Chrome Browser to (chrome://extensions)
+	- Click the Button `Load unpacked` and browse to the `fake_news_detective` folder
+	- Click Select to select this extension directory
 
 3) Sign in to Google Chrome then Authorize Extension
-	- After signing in using OSU account. You will be prompted to sign into Fake News 	Detective.
-	- Click on your OSU account in this window. Opening the Google Access page for 		Fake News Detective.
-	- Click Allow. This will close this window.
+	- After signing in using OSU account, you will be prompted to sign into the Fake News Detective
+	- Click on your OSU account in this window which opens the Google Access page for the Fake News Detective
+	- Click `Allow`, which will will close this window
 
-4) Running App in Dev mode. 
-	- Note now you have Fake News Detective 1.0 installed as extension.
-	- In the Browser look for eye in magnifying glass next to address url box.
-	- Click on the icon to open pop up.
+4) Running App in Dev mode
+	- You should now have the Fake News Detective 1.0 installed as an extension
+	- In the Browser there should be an eye in a magnifying glass next to the address URL box
+	- Click on the icon to open a popup
 
 5) Testing Permissions, On Change URL capture & local storage use
-	- With popup open you will see below Submit button instructions. Follow 		instructions.
-	- After clicking on 'Submit' you will see the following that was stored and 		pulled from chrome extension's version of local storage.
-		- user email
-		- user Google ID
+	- Inside of the popup you will see a `Submit` button followed by instructions, which you should follow
+	- After clicking on `Submit` you will see the following that was stored and pulled from Chrome extension's version of local storage
+		- User email
+		- User Google ID
 		- On Change latest URL navigated to
 	
-4) Viewing Command Line for Extensions.
-	- Open the Chrome Extensions Page (chrome://Extensions).
-	- In the just added Chrome Extensions page you will see and ID and an Inspect 		views ![#1589F0](background page)
-	- Click on ![#1589F0](background page) to open Extensions Console.
-	- This is were you can view errors and the console messages.
+6) Viewing Command Line for Extensions
+	- Open the Chrome Extensions page `(chrome://extensions)`
+	- In the Just Added Chrome Extensions page you will see an ID and an Inspect views `background page (Inactive)`
+	- Click on `background page (Inactive)` to open Extensions console
+	- You can use this console to view errors and the console messages
 
+7) Uninstall the Fake News Detective Extension
+	- Open the Chrome Extensions page `(chrome://extensions)`
+	- Within the Extension page, locate the Fake News Detective extension and click on the `Remove` button
+	- A popup will ask you to confirm that you would like to uninstall the extension and once you click on the `Remove` button in the popup, the Fake News Detective extension should be removed from your installed extensions
 
 ## Built With
 ---
