@@ -8,6 +8,26 @@ chrome.runtime.onInstalled.addListener(function() {
   chrome.storage.sync.set({color: '#3aa757'}, function() {
     console.log('Im the background script');
   });
+  chrome.identity.getAuthToken({interactive: true}, function(token) {
+    let init = {
+      method: 'GET',
+      async: true,
+      headers: {
+        Authorization: 'Bearer ' + token,
+        'Content-Type': 'application/json'
+      },
+      'contentType': 'json'
+    };
+    
+    fetch(
+      'https://people.googleapis.com/v1/people/me?personFields=names,emailAddresses&key=AIzaSyD5xMcNJynDl_3plmoELw4mDWFwFxInZ6k',
+      init)
+      .then((response) => response.json())
+      .then(function(data) {
+        console.log(data)
+      });
+
+  });
   chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
     chrome.declarativeContent.onPageChanged.addRules([{
       conditions: [new chrome.declarativeContent.PageStateMatcher({
@@ -21,10 +41,29 @@ chrome.runtime.onInstalled.addListener(function() {
 ///https://stackoverflow.com/questions/34957319/how-to-listen-for-url-change-with-chrome-extension
 chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
   if (changeInfo.url) {
-    var url_host = new URL(tabs[0].url)
-    if (url.hostname != 'google.com')
-      {
-        alert(url_host);
-      }
+
+        console.log("in changed url");
+        console.log(changeInfo.url);
+        chrome.identity.getAuthToken({interactive: true}, function(token) {
+          let init = {
+            method: 'GET',
+            async: true,
+            headers: {
+              Authorization: 'Bearer ' + token,
+              'Content-Type': 'application/json'
+            },
+            'contentType': 'json'
+          };
+          
+          fetch(
+            'https://people.googleapis.com/v1/people/me?personFields=names,emailAddresses&key=AIzaSyD5xMcNJynDl_3plmoELw4mDWFwFxInZ6k',
+            init)
+            .then((response) => response.json())
+            .then(function(data) {
+              console.log(data)
+            });
+      
+        });
+
   }
 });

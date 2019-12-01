@@ -37,5 +37,14 @@
     "48": "images/base48.png",
     "128": "images/base128.png"
   },
+  "oauth2": {
+    "client_id": "657083043856-7dlffqtji03v3k2201fekgh0r8caj42m.apps.googleusercontent.com",
+    "scopes":[
+      "https://www.googleapis.com/auth/contacts.readonly",
+      "https://www.googleapis.com/auth/userinfo.profile",
+      "https://www.googleapis.com/auth/userinfo.email"
+    ]
+  },
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAkO5jTyUGE0MRBbhzrc/1Kwq3sdl0xxr9e1yx+oVtXwp04KJIkuraIU02TaC7+OvahlhakejwtHhr+PWSNe+lxX22bWDqOEGW90ZrE0rXmd3UQZJUzem0TcnSwd0MoKg6nkxOq+26UvHzZddsxcuTZOpVMTMqm/+bh9cHiLzewx2za6kowhi5KLvmd5oYcS2X9QKXI0qRgUacOMBMMP75OYSuytZx/+h7aRXDIkzkHEBfGQPwEaJfMLPlFFnhSl+PBTezgpAo7Eq5GoDSk10FLFDOx6+TDURT3Q1uAiDF9RgPaRVZCXlRj/p19VnPMC6QPcGnwRcn+au4/2M49Ki/5wIDAQAB",
   "manifest_version": 2
 }
