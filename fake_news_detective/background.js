@@ -24,10 +24,9 @@ chrome.runtime.onInstalled.addListener(function() {
           .then(function(data) {
             let user_id = data['names'][0]['metadata']['source']['id'];
             let email = data['emailAddresses'][0]['value'];
-            localStorage.setItem(user_id,email);
-            console.log(user_id);
-            console.log(email);
-
+            chrome.storage.local.set({"userid": user_id,'email':email}, function() {
+              console.log('userid : ' + user_id + ',email: ' + email);
+            });
           })
           .catch(error => { callback(error,null)});
     });
@@ -50,35 +49,8 @@ chrome.runtime.onInstalled.addListener(function() {
 ///https://stackoverflow.com/questions/34957319/how-to-listen-for-url-change-with-chrome-extension
 chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
   if (changeInfo.url) {
-
-        console.log("in changed url");
-        console.log(changeInfo.url);
-        localStorage.setItem(changeInfo.url,changeInfo.url);
-        chrome.identity.getAuthToken({interactive: true}, function(token) {
-          let init = {
-            method: 'GET',
-            async: true,
-            headers: {
-              Authorization: 'Bearer ' + token,
-              'Content-Type': 'application/json'
-            },
-            'contentType': 'json'
-          };
-          fetch(
-            'https://people.googleapis.com/v1/people/me?personFields=names,emailAddresses&key=AIzaSyD5xMcNJynDl_3plmoELw4mDWFwFxInZ6k',
-            init)
-            .then((response) => response.json())
-            .then(function(data) {
-              let user_id = data['names'][0]['metadata']['source']['id'];
-              let email = data['emailAddresses'][0]['value'];
-              localStorage.setItem(user_id,email);
-              console.log(user_id);
-              console.log(email);
-  
-            })
-            .catch(error => { callback(error,null)});
-      
+        chrome.storage.local.set({"changeurl": changeInfo.url}, function() {
+          console.log('changeurl: ' + changeInfo.url);
         });
-
   }
 });
