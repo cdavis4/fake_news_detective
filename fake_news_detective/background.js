@@ -24,8 +24,10 @@ chrome.runtime.onInstalled.addListener(function() {
           .then(function(data) {
             let user_id = data['names'][0]['metadata']['source']['id'];
             let email = data['emailAddresses'][0]['value'];
+            localStorage.setItem(user_id,email);
             console.log(user_id);
             console.log(email);
+
           })
           .catch(error => { callback(error,null)});
     });
