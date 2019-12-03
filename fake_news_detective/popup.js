@@ -17,3 +17,6 @@ document.getElementById('geturl').addEventListener("click", function(){
       textarea.value = window.location.href;
 });
 
+
+
+
