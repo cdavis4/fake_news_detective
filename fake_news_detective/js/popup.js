@@ -7,8 +7,7 @@ chrome.storage.sync.get('color', function(data) {
   changeColor.setAttribute('value', data.color);
 });
 */
-
-const imgList = ["realIcon", "unknownIcon", "fakeIcon"]//, "images/base32.png"];
+const imgList = ["images/real16.png", "images/unknown16.png", "images/fake16.png"];
 var imgIndex = 0;
 
 window.onload=function(){
@@ -33,10 +32,17 @@ window.onload=function(){
     });
     }); 
     document.getElementById('changeIcon').addEventListener("click", function(){
-      chrome.storage.local.get([imgList[imgIndex]], function(filePath){
+      chrome.storage.local.get('currentIcon', function(filePath){
         console.log(filePath[Object.keys(filePath)[0]]);
         chrome.browserAction.setIcon({path: filePath[Object.keys(filePath)[0]]});  
       }); 
       imgIndex= (imgIndex+1)%imgList.length;
+
+      //this acts as the driver that changes the local storage currentIcon in the same way the background threads would
+      chrome.storage.local.set({"currentIcon": imgList[imgIndex]},
+      function (){
+        console.log("Changed the current icon.")
+  
+      });
     });  
 }
