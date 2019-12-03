@@ -6,6 +6,11 @@
 
 chrome.runtime.onInstalled.addListener(function() {
   chrome.storage.sync.set({color: '#3aa757'}, function() {
+
+    chrome.storage.local.set({"realIcon":"images/real16.png", "unknownIcon":"images/unknown16.png", "fakeIcon":"images/fake16.png"}, function() {
+      console.log("added to background storage.");
+    });
+
     console.log('Im the background script');
     chrome.identity.getAuthToken({interactive: true}, function(token) {
       let init = {

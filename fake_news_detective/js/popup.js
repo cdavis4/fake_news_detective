@@ -8,7 +8,7 @@ chrome.storage.sync.get('color', function(data) {
 });
 */
 
-const imgList = ["images/real16.png", "images/unknown16.png", "images/fake16.png"]//, "images/base32.png"];
+const imgList = ["realIcon", "unknownIcon", "fakeIcon"]//, "images/base32.png"];
 var imgIndex = 0;
 
 window.onload=function(){
@@ -33,10 +33,10 @@ window.onload=function(){
     });
     }); 
     document.getElementById('changeIcon').addEventListener("click", function(){
-
-      let i = imgList[imgIndex];
-      console.log(i);
-      chrome.browserAction.setIcon({path: imgList[imgIndex]});
+      chrome.storage.local.get([imgList[imgIndex]], function(filePath){
+        console.log(filePath[Object.keys(filePath)[0]]);
+        chrome.browserAction.setIcon({path: filePath[Object.keys(filePath)[0]]});  
+      }); 
       imgIndex= (imgIndex+1)%imgList.length;
     });  
 }
