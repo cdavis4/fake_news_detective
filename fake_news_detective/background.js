@@ -7,11 +7,14 @@
 chrome.runtime.onInstalled.addListener(function() {
   chrome.storage.sync.set({color: '#3aa757'}, function() {
 
-    chrome.storage.local.set({"realIcon":"images/real16.png", "unknownIcon":"images/unknown16.png", "fakeIcon":"images/fake16.png"}, function() {
+    //chrome.storage.local.set({"realIcon":"images/real16.png", "unknownIcon":"images/unknown16.png", "fakeIcon":"images/fake16.png"}, function() {
+    chrome.storage.local.set({"realIcon":{"image":"images/real16.png", "message":"This webpage is real"}, 
+    "unknownIcon":{"image":"images/unknown16.png", "message":"The articles status is unknown"}, 
+    "fakeIcon":{"image":"images/fake16.png","message":"The articles status is fake."}}, function() {
       console.log("Added all icons to background storage.");
     });
 
-    chrome.storage.local.set({"currentIcon":"images/real16.png"}, function (){
+    chrome.storage.local.set({"currentIcon":{"image":"images/real16.png", "message":"This webpage is real"}}, function (){
       console.log("Set the current Icon.")
 
     });
