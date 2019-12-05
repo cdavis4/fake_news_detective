@@ -8,9 +8,10 @@ chrome.runtime.onInstalled.addListener(function() {
   chrome.storage.sync.set({color: '#3aa757'}, function() {
 
     //chrome.storage.local.set({"realIcon":"images/real16.png", "unknownIcon":"images/unknown16.png", "fakeIcon":"images/fake16.png"}, function() {
-    chrome.storage.local.set({"realIcon":{"image":"images/real16.png", "message":"This webpage is real"}, 
-    "unknownIcon":{"image":"images/unknown16.png", "message":"The articles status is unknown"}, 
-    "fakeIcon":{"image":"images/fake16.png","message":"The articles status is fake."}}, function() {
+    chrome.storage.local.set({"realIcon":{"image":"images/real16.png", "message":"This webpage is real."}, 
+    "unknownIcon":{"image":"images/unknown16.png", "message":"The articles status is unknown."},
+    "fakeIcon":{"image":"images/fake16.png","message":"The articles status is fake."},
+    "baseIcon":{"image":"images/base16.png","message":"This is the default extension icon."}}, function() {
       console.log("Added all icons to background storage.");
     });
 
