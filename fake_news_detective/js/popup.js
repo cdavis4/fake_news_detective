@@ -7,6 +7,10 @@ chrome.storage.sync.get('color', function(data) {
   changeColor.setAttribute('value', data.color);
 });
 */
+const imgList = ["realIcon", "unknownIcon", "fakeIcon"];
+//const imgList = ["images/real16.png", "images/unknown16.png", "images/fake16.png"];
+var imgIndex = 0;
+
 window.onload=function(){
   //let button = document.getElementById('geturl');
 
@@ -27,5 +31,29 @@ window.onload=function(){
         urlhtml.innerHTML = cururl.changeurl;
     
     });
-    });   
+    }); 
+    document.getElementById('changeIcon').addEventListener("click", function(){
+      chrome.storage.local.get('currentIcon', function(filePath){
+
+        console.log(filePath[Object.keys(filePath)[0]].image);
+        chrome.browserAction.setIcon({path: filePath[Object.keys(filePath)[0]].image}); 
+
+        let tempString= filePath[Object.keys(filePath)[0]].message;
+        chrome.browserAction.setTitle({title:tempString});
+
+
+      }); 
+
+      imgIndex= (imgIndex+1)%imgList.length;
+
+      chrome.storage.local.get(imgList[imgIndex], function(newPath){
+        let tempMessage= newPath[Object.keys(newPath)[0]].message;
+        let tempIcon=newPath[Object.keys(newPath)[0]].image;
+        console.log(tempMessage);
+        console.log(tempIcon);
+        chrome.storage.local.set({"currentIcon": {"image":tempIcon,'message':tempMessage}}, function(results) {
+          console.log(results);
+        });
+      });
+    });  
 }
