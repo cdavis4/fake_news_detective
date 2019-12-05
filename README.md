@@ -81,3 +81,8 @@ This project required the use of the **Waterfall** method diagram and describe t
 ### Fake News Detection Application: User Stories and Set-up Assignment
 
 This project required the use of the **Agile** method. Specifically **Extreme** framework for planning.
+
+
+### Fake News Detection Application: Implementation 1 Assignment
+
+This project required the use of the **Agile** method. Specifically **Extreme** framework for implementing user stories.
