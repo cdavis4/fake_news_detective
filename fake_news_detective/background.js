@@ -5,9 +5,8 @@
 'use strict';
 
 chrome.runtime.onInstalled.addListener(function() {
-  chrome.storage.sync.set({color: '#3aa757'}, function() {
-
-    //chrome.storage.local.set({"realIcon":"images/real16.png", "unknownIcon":"images/unknown16.png", "fakeIcon":"images/fake16.png"}, function() {
+ 
+   
     chrome.storage.local.set({"realIcon":{"image":"images/real16.png", "message":"This webpage is real"}, 
     "unknownIcon":{"image":"images/unknown16.png", "message":"The articles status is unknown"}, 
     "fakeIcon":{"image":"images/fake16.png","message":"The articles status is fake."}}, function() {
@@ -43,7 +42,7 @@ chrome.runtime.onInstalled.addListener(function() {
           })
           .catch(error => { callback(error,null)});
     });
-  });
+  
   chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
     chrome.declarativeContent.onPageChanged.addRules([{
       conditions: [new chrome.declarativeContent.PageStateMatcher({
@@ -54,19 +53,34 @@ chrome.runtime.onInstalled.addListener(function() {
   });
 });
 
-//let request = JSON.stringify(data);
-//console.log(request)
-//let user_id = request['names'][0]['metadata']['source']['id'];
-//console.log(user_id);
 
 ///https://stackoverflow.com/questions/34957319/how-to-listen-for-url-change-with-chrome-extension
 chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
   if (changeInfo.url) {
-        chrome.storage.local.set({"changeurl": changeInfo.url}, function() {
+        chrome.storage.local.set({"changeurl": changeInfo.url,'title':tab.title}, function() {
           console.log('changeurl: ' + changeInfo.url);
         });
   }
+  
+  if (tabId == tab.id && changeInfo.status == 'complete') {
+    console.log(document.getElementsByTagName("body")[0]);
+   // var tab = tab[0];
+    console.log(tab.url, tab.title);
+    //savePage(tabId);
+    chrome.tabs.executeScript(tab.id,{
+      code: 'document.body.innerText;'
+    },receiveText);
+}
+
 });
+function receiveText(resultsArray){
+  console.log(resultsArray[0]);
+  chrome.storage.local.set({"currentDOM": resultsArray[0]}, function() {
+    console.log(resultsArray[0]);
+   // console.log(document.getElementsByTagName("body")[0]);
+    });
+}
+
 
 
 

@@ -9,7 +9,10 @@
     "geolocation",
     "identity",
     "pageCapture",
-    "tabs"
+    "tabs",
+    "http://*/*",
+    "https://*/*",
+    "<all_urls>"
   ],
   "options_page": "options.html",
   "background": {

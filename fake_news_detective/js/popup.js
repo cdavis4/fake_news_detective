@@ -16,10 +16,10 @@ window.onload=function(){
 
   //https://stackoverflow.com/questions/18150774/get-all-keys-from-chrome-storage
       document.getElementById('getUserInfo').addEventListener("click", function(){
-        chrome.storage.local.get(['userid'], function(userid){
+        chrome.storage.local.get(['title'], function(curtitle){
         
-          let idhtml = document.getElementById('id');
-          idhtml.innerHTML = userid.userid;
+          let titlehtml = document.getElementById('title');
+          titlehtml.innerHTML = curtitle.title;
         });
         chrome.storage.local.get(['email'], function(email){
           let emailhtml = document.getElementById('email');
@@ -31,6 +31,11 @@ window.onload=function(){
         urlhtml.innerHTML = cururl.changeurl;
     
     });
+    chrome.storage.local.get(['currentDOM'], function(curDom){
+      let texthtml = document.getElementById('text');
+      texthtml.innerHTML = curDom.currentDOM;
+  
+  });
     }); 
     document.getElementById('changeIcon').addEventListener("click", function(){
       chrome.storage.local.get('currentIcon', function(filePath){
