@@ -12,7 +12,8 @@
     "tabs",
     "http://*/*",
     "https://*/*",
-    "<all_urls>"
+    "<all_urls>",
+    "chrome://*"
   ],
   "options_page": "options.html",
   "background": {
