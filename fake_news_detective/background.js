@@ -7,11 +7,12 @@
 chrome.runtime.onInstalled.addListener(function() {
  
    
-    chrome.storage.local.set({"realIcon":{"image":"images/real16.png", "message":"This webpage is real"}, 
-    "unknownIcon":{"image":"images/unknown16.png", "message":"The articles status is unknown"}, 
-    "fakeIcon":{"image":"images/fake16.png","message":"The articles status is fake."}}, function() {
-      console.log("Added all icons to background storage.");
-    });
+  chrome.storage.local.set({"realIcon":{"image":"images/real16.png", "message":"This webpage is real."}, 
+  "unknownIcon":{"image":"images/unknown16.png", "message":"The articles status is unknown."},
+  "fakeIcon":{"image":"images/fake16.png","message":"The articles status is fake."},
+  "baseIcon":{"image":"images/base16.png","message":"This is the default extension icon."}}, function() {
+    console.log("Added all icons to background storage.");
+  });
 
     chrome.storage.local.set({"currentIcon":{"image":"images/real16.png", "message":"This webpage is real"}}, function (){
       console.log("Set the current Icon.")
