@@ -7,13 +7,33 @@
   <body>
     <p>THIS IS THE FAKE NEWS DETECTIVE</p>
 
-    <div class= "articleStatus">
+    <div id="base-logo" class= "articleStatus">
+      <h1 class= "logo">
+        <img src="images/base16.png">
+      </h1>
+      <p>Thank you for installing the Fake News Detective extension. Please click the "Submit" button below to submit this website for review.</p>
+    </div>
+    <div id="unknown-logo" class= "articleStatus">
       <h1 class= "logo">
         <img src="images/unknown16.png">
       </h1>
       <p>This website's content has not yet been reviewed. Please click the "Submit" button below to submit this website for review.</p>
+    </div>
+    <div id="real-logo" class= "articleStatus">
+      <h1 class= "logo">
+        <img src="images/real16.png">
+      </h1>
+      <p>This website's content has been reviewed and is verified real. Please click the "Submit" button below to submit this website for review.</p>
+    </div> 
+    <div id="fake-logo" class= "articleStatus">
+      <h1 class= "logo">
+        <img src="images/fake16.png">
+      </h1>
+      <p>This website's content has been reviewed and is verified fake. Please click the "Submit" button below to submit this website for review.</p>
+    </div>
+    <div id="submit-buttons">
       <button id='getUserInfo'>Submit</button>
-      <button id='changeIcon'>cycle</button>
+      <button id='changeIcon'>Cycle</button>
       <div>
         <h3>User Email & User's Google ID & On Change New URL</h3>
         <p><i>This is obtained from people API (on user's approval) when the extension is installed,<br> written to and obtained from local storage<br> as a test for permissions required for app to work</i></p>

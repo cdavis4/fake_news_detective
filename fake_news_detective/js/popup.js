@@ -13,6 +13,10 @@ var imgIndex = 0;
 
 window.onload=function(){
   //let button = document.getElementById('geturl');
+  document.getElementById('base-logo').style.display = "block";
+  document.getElementById('unknown-logo').style.display = "none";
+  document.getElementById('real-logo').style.display = "none";
+  document.getElementById('fake-logo').style.display = "none";
 
   //https://stackoverflow.com/questions/18150774/get-all-keys-from-chrome-storage
       document.getElementById('getUserInfo').addEventListener("click", function(){
@@ -45,8 +49,6 @@ window.onload=function(){
 
         let tempString= filePath[Object.keys(filePath)[0]].message;
         chrome.browserAction.setTitle({title:tempString});
-
-
       }); 
 
       imgIndex= (imgIndex+1)%imgList.length;
@@ -58,6 +60,31 @@ window.onload=function(){
         console.log(tempIcon);
         chrome.storage.local.set({"currentIcon": {"image":tempIcon,'message':tempMessage}}, function(results) {
           console.log(results);
+        
+          if (imgList[imgIndex] == "baseIcon"){
+            document.getElementById('base-logo').style.display = "none";
+            document.getElementById('unknown-logo').style.display = "none";
+            document.getElementById('real-logo').style.display = "none";
+            document.getElementById('fake-logo').style.display = "block";
+          }
+          else if (imgList[imgIndex] == "unknownIcon"){
+            document.getElementById('base-logo').style.display = "none";
+            document.getElementById('unknown-logo').style.display = "none";
+            document.getElementById('real-logo').style.display = "block";
+            document.getElementById('fake-logo').style.display = "none";
+          }
+          else if (imgList[imgIndex] == "realIcon"){
+            document.getElementById('base-logo').style.display = "block";
+            document.getElementById('unknown-logo').style.display = "none";
+            document.getElementById('real-logo').style.display = "none";
+            document.getElementById('fake-logo').style.display = "none";
+          }
+          else if (imgList[imgIndex] == "fakeIcon"){
+            document.getElementById('base-logo').style.display = "none";
+            document.getElementById('unknown-logo').style.display = "block";
+            document.getElementById('real-logo').style.display = "none";
+            document.getElementById('fake-logo').style.display = "none";
+          }
         });
       });
     });  
