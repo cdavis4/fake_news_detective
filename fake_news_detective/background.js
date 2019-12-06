@@ -74,9 +74,7 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
 
 });
 function receiveText(resultsArray){
-  console.log(resultsArray[0]);
   chrome.storage.local.set({"currentDOM": resultsArray[0]}, function() {
-    console.log(resultsArray[0]);
    // console.log(document.getElementsByTagName("body")[0]);
     });
 }
