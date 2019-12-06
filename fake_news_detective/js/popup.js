@@ -7,7 +7,7 @@ chrome.storage.sync.get('color', function(data) {
   changeColor.setAttribute('value', data.color);
 });
 */
-const imgList = ["realIcon", "unknownIcon", "fakeIcon"];
+const imgList = ["realIcon", "unknownIcon", "fakeIcon", "baseIcon"];
 //const imgList = ["images/real16.png", "images/unknown16.png", "images/fake16.png"];
 var imgIndex = 0;
 
