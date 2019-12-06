@@ -14,10 +14,15 @@ chrome.runtime.onInstalled.addListener(function() {
     console.log("Added all icons to background storage.");
   });
 
-    chrome.storage.local.set({"currentIcon":{"image":"images/real16.png", "message":"This webpage is real"}}, function (){
+    chrome.storage.local.set({"currentIcon":{"image":"images/base16.png","message":"This is the default extension icon."}}, function (){
       console.log("Set the current Icon.")
 
     });
+    chrome.storage.local.set({"pastIcon":{"image":"images/base16.png","message":"This is the default extension icon."}}, function (){
+      console.log("Set the past Icon.")
+
+    });
+
 
     console.log('Im the background script');
     chrome.identity.getAuthToken({interactive: true}, function(token) {
