@@ -34,15 +34,15 @@ These instructions will get the extension running on your local browser for deve
 	- In the Browser there should be an eye in a magnifying glass next to the address URL box
 	- Click on the icon to open a popup
 
-5) Testing Permissions, web information capture, dynamic icons/headers & local storage use
-	- Inside of the popup you will see a `cycle` and a `Submit` button.
+5) Testing Permissions, Web Information Capture, Dynamic Icons/Headers and Local Storage Use
+	- Inside of the popup you will see a `Cycle` button and a `Submit` button
 	- After clicking on `Submit` you will see the following that was stored and pulled from Chrome extension's version of local storage
 		- User email
 		- Web Page title
 		- On Change latest URL navigated to
 		- InnerHTML text for the web page
 
-	- After clicking on `cycle` you will see the icon change and the header in the popup will change as well to match. Continue clicking to cycle through the different article/web page status; unknown, real, fake, and the base icon.
+	- After clicking on `Cycle` you will see the icon change and the header in the popup will change as well to match the current icon that is displayed. Continue clicking on this button to cycle through the different article/web page statuses: unknown, real, fake, and base icon.
 		
 	
 6) Viewing Command Line for Extensions
